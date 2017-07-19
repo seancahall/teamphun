@@ -1,0 +1,81 @@
+<h1>Customer Manager</h1>
+<hr/>
+<p>Update Customer's Record</p>
+<pre></pre>
+<!-- Add a new customer -->
+<div class="container-fluid">
+    <div class="mainBox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-title">Update Customer's Record</div>
+            </div>
+            <div class="panel-body">
+                <div class="form">
+                    <!-- Register a new customer -->
+                    <form ng-submit="customerAdminCtrl.addCustomer() ">
+                        <!-- Register Business -->
+                        <div class="form-group ">
+                            <label for="business">Business Name</label>
+                            <input id="buisness" ng-model="customerAdminCtrl.customerSelected.business" type="text" class="form-control" placeholder="Business Name">
+                        </div>
+                        <!-- Register Customer First Name -->
+                        <div class="form-group ">
+                            <label for="firstName">First Name</label>
+                            <input id="firstName" ng-model="customerAdminCtrl.customerSelected.firstName" type="text " class="form-control " placeholder="First Name">
+                        </div>
+                        <!-- Register Customer Last Name -->
+                        <div class="form-group ">
+                            <label for="lastName">Last Name</label>
+                            <input id="lastName" ng-model="customerAdminCtrl.customerSelected.lastName" type="text " class="form-control " placeholder="Last Name ">
+                        </div>
+                        <!-- Register Phone Number -->
+                        <div class="form-group ">
+                            <label for="phone">Phone Number</label>
+                            <input id="phone" ng-model="customerAdminCtrl.customerSelected.phone" type="text" class="form-control" placeholder="Phone Number ">
+                        </div>
+                        <!-- Register Email -->
+                        <div class="form-group ">
+                            <label for="email">Email</label>
+                            <input id="email" ng-model="customerAdminCtrl.customerSelected.email" type="email" class="form-control" placeholder="Email">
+                        </div>
+                        <p ng-hide="add"><a ng-click="address = !address; add = !add">Add Address</a></p>
+                        <div ng-show="address">
+                            <p><a ng-click="address = !address; add = !add">Remove Address</a></p>
+                            <!-- Register Street Address -->
+                            <div class="form-group ">
+                                <label for="address">Street Address</label>
+                                <input id="address" ng-model="customerAdminCtrl.customerSelected.streetAddress" type="text" class="form-control" placeholder="Street Address ">
+                            </div>
+                            <!-- Register City -->
+                            <div class="form-group ">
+                                <label for="city">City</label>
+                                <input id="city" ng-model="customerAdminCtrl.customerSelected.city" type="text" class="form-control" placeholder="City">
+                            </div>
+                            <!-- Register State -->
+                            <div class="form-group ">
+                                <label for="state">State</label>
+                                <input id="state" ng-model="customerAdminCtrl.customerSelected.state" type="text" class="form-control" placeholder="state">
+                            </div>
+                            <!-- Register State -->
+                            <div class="form-group ">
+                                <label for="zipCode">Zip Code</label>
+                                <input id="zipCode" ng-model="customerAdminCtrl.customerSelected.zipCode" type="text" class="form-control" placeholder="Zip Code">
+                            </div>
+                        </div>
+                        <!-- Notes -->
+                        <div class="form-group">
+                            <label for="notes">Notes</label>
+                            <textarea id="notes" ng-model="customerAdminCtrl.customerSelected.note" class="form-control" rows="3" placeholder="Notes"></textarea>
+                        </div>
+                        <!-- Submit Registered User and return to the Login Page -->
+                        <div class="form-group">
+                            <div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<ol class="breadcrumb">
+    <!-- Link to add a new estimate -->
+    <li role="presentation"><span class="glyphicon glyphicon glyphicon-sunglasses" aria-hidden="true"></span><a ui-sref="main.customerSelect"><strong> TEAM PHUN </strong></a></li>
+    <!-- Link to Add a New User -->
+    <li role="presentation" class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">User Manager <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><a ui-sref="admin.registration">Add New User</a></li>
+            <li><a ui-sref="admin.registrationManager">Manage User</a></li>
+        </ul>
+    </li>
+    <!-- Link to Add  a New Customer -->
+    <li role="presentation" class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Customer Manager <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><a ui-sref="admin.customer">Add New Customer</a></li>
+            <li><a ui-sref="admin.customerManager">Manage Customer</a></li>
+            <!-- <li><a ui-sref="admin.customerUpdate">Update Customer</a></li> -->
+        </ul>
+    </li>
+    <li role="presentation" class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Estimate Manager <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><a ui-sref="admin.estimateManager">Add Estimate</a></li>
+            <li><a>Manage Estimate</a></li>
+        </ul>
+    </li>
+    <li role="presentation" class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pricing Matrix Manager <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><a ui-sref="admin.pricing">Add New Price</a></li>
+            <li><a>Manage Price</a></li>
+        </ul>
+    </li>
+    <!-- Link to logout -->
+    <li role="presentation">
+        <a ng-click="adminCtrl.logout()">Log Out</a>
+    </li>
+</ol>
+<!-- <img class="image" src="app/styles/img/LogoBlackWhite.svg"> -->
+<div class="container-fluid">
+    <div ui-view></div>
+</div>

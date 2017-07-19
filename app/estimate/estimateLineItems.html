@@ -1,0 +1,115 @@
+<div class="container">
+    <h1>Estimate Calculation</h1>
+    <h4>Step 3 of 3</h4>
+    <hr/>
+    <div class="mainBox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-title">{{vm.customer.firstName}} {{vm.customer.lastName}} Estimate</div>
+                <div class="link" ui-sref="main.estimateSelect"><a>Back</a></div>
+            </div>
+            <div class="panel-body">
+                <!-- Estimate Line Items -->
+                <!-- ***************************************************************************************************
+                ////NEED TO GO OVER NOTES ON WHAT FIELDS SEAN WANTS ON HERE ///////////////////////////////////////
+     
+              *************************************************************************************************** -->
+                <div clas="form">
+                    <!-- Add feilds based on what vendor is chosen -->
+                    <div class="form-group">
+                        <label for="">Vendor Name</label>
+                        <input id="" type="text" class="form-control ">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Product Description</label>
+                        <input id="description" ng-model="vm.description" type="text" class="form-control ">
+                    </div>
+                    <div class="form-group">
+                        <label for="vendorCasePrice">Price Per Item</label>
+                        <input id="vendorCasePrice" ng-model="vm.casePrice" class="form-control " ng-init="vendorCasePrice = 0">
+                    </div>
+                    <div class="form-group">
+                        <label for="totalPieces">Total Pieces in Order</label>
+                        <input id="totalPieces" ng-model="vm.totalPieces" type="number" step="any" class="form-control ">
+                    </div>
+                    <!-- Dropdown select: 10 colors total  -->
+                    <div class="form-group">
+                        <label for="colors">Total Number of Colors</label>
+                        <select id="colors" class="form-control " ng-model="vm.totalNumberColors" ng-click="vm.findColorTier(vm.totalNumberColors)">
+                            <option selected disabled hidden>Colors</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                            <option value="4">Four</option>
+                            <option value="5">Five</option>
+                            <option value="6">Six</option>
+                            <option value="7">Seven</option>
+                            <option value="8">Eight</option>
+                            <option value="9">Nine</option>
+                            <option value="10">Ten</option>
+                        </select>
+                    </div>
+                    <!-- Print Locations on T-Shirt (can have multiple) $.75 charge for each location after the 1st-->
+                    <div class="form-group">
+                        <label for="printLocations">Number of Print Locations</label>
+                        <input id="printLocations" ng-model="vm.numberPrintLocations" type="number" class="form-control ">
+                    </div>
+                    <!-- Checkboxes -->
+                    <div class="form-group">
+                        <label for="addOns">Add-On's:</label>
+                        <div id="addOns">
+                            <!-- per unit cost -->
+                            <div class="checkbox">
+                                <label for="metalicInks">
+                                    <input id="metalicInks" ng-model="vm.metallicInks" type="checkbox" value="false" ng-true-value="1" ng-false-value="0">Metalic Inks</label>
+                            </div>
+                            <!-- per unit cost -->
+                            <div class="checkbox">
+                                <label for="discharge">
+                                    <input id="discharge" ng-model="vm.discharge" type="checkbox" value="false" ng-true-value="1" ng-false-value="0">Discharge</label>
+                            </div>
+                            <!-- per unit cost -->
+                            <div class="checkbox">
+                                <label for="foil">
+                                    <input id="foil" ng-model="vm.foil" type="checkbox" value="false" ng-true-value="1.85" ng-false-value="0">Foil</label>
+                            </div>
+                            <!-- per unit cost -->
+                            <div class="checkbox" value="false">
+                                <label for="flash">
+                                    <input id="flash" ng-model="vm.flash" type="checkbox" value="false" ng-true-value="0.40" ng-false-value="0">Flash</label>
+                            </div>
+                            <!-- PMS Color Matching is $15 per color per job -->
+                            <div class="checkbox">
+                                <label for="pms">
+                                    <input id="pms" ng-model="vm.pmsColor" type="checkbox" value="false" ng-true-value="15" ng-false-value="0">PMS Color Matching</label>
+                                <!-- Set up is $15 per color per job -->
+                            </div>
+                            <div class="checkbox">
+                                <label for="setUp">
+                                    <input id="setUp" ng-model="vm.setUp" type="checkbox" value="true" ng-true-value="15" ng-false-value="0">Set Up</label>
+                            </div>
+                            <!-- 8% CA Sales tax is charged for customers who will not resale product -->
+                            <div class="checkbox">
+                                <label for="salesTax">
+                                    <input id="salesTax" ng-model="vm.tax" type="checkbox" value="false" ng-true-value="0.08" ng-false-value="0">Sales Tax</label>
+                            </div>
+                            <!-- Button should be disabled or hidden if order is less than 72 items -->
+                            <div class="checkbox" ng-if="vm.totalPieces >= 72">
+                                <label for="folding">
+                                    <input id="folding" ng-model="vm.folding" type="checkbox" value="false" ng-true-value="0.30" ng-false-value="0">Folding and Bagging</label>
+                            </div>
+                            <!-- Profit Margin slider need to be a percentage -->
+                            <div class="form-group">
+                                <label for="profitMargin">Profit Margin
+                                    <a class="profitMargin" id="profitMargin"> {{vm.profitMargin + "%"}}</a>
+                                </label>
+                                <input id="profitMargin" type="range" min="0" max="100" ng-model="vm.profitMargin" class="" value="0">
+                            </div>
+                            <button ui-sref="main.estimateOverview" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

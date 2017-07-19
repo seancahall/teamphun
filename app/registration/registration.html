@@ -1,0 +1,56 @@
+<h1>User Manager</h1>
+<hr/>
+<p>Add new user - Role itegration needed</p>
+
+<!-- Register New User -->
+<div class="container">
+    <div class="mainBox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-title">Register a New User</div>
+                <!-- <div class="link" ui-sref="login"><a>Login</a></div> -->
+            </div>
+            <div class="panel-body">
+                <form ng-submit="registerCtrl.register()">
+                    <!-- Register New Username -->
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input id="username" ng-model="registerCtrl.registration.username" type="text" class="form-control" placeholder="Username">
+                    </div>
+                    <!-- Register New Email -->
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input id="email" ng-model="registerCtrl.registration.emailAddress" type="text" class="form-control" placeholder="Email">
+                    </div>
+                    <!-- Register New Password -->
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input id="password" ng-model="registerCtrl.registration.password" type="password" class="form-control" placeholder="Password">
+                    </div>
+                    <!-- Confirm New Password -->
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input id="username" ng-model="registerCtrl.registration.confirmPassword" type="password" class="form-control" placeholder="Confirm Password">
+                    </div>
+                    <!-- This select list is not active at this time -->
+                    <div class="form-group">
+                        <label for="role">Role:</label>
+                        <select class="form-control" id="role">
+                            <option>Employee</option>
+                            <option>Admin</option>
+                            <option>Owner</option>
+                            <option>Customer</option>
+                        </select>
+                    </div>
+                    <!-- Submit Registered User and return to the main adminisrtation page -->
+                    <div class="form-group">
+                        <div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

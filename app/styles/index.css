@@ -1,0 +1,46 @@
+.mainBox {
+    margin-top: 20px;
+}
+
+.loginbox {
+    margin-top: 70px;
+}
+
+.border {
+    border-top: 1px solid#888;
+    padding-top: 15px;
+    font-size: 85%
+}
+
+.link a {
+    text-decoration: none;
+    float: right;
+    font-size: 85%;
+    position: relative;
+    top: -10px;
+}
+
+.anchor a {
+    text-decoration: none;
+}
+
+.image {
+    width: 200px;
+    height: 200px;
+}
+
+
+/*breadcrumb nav bar*/
+
+.breadcrumb a {
+    color: rgba(0, 0, 0, 1);
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    color: rgba(153, 153, 153, 1);
+}
+
+.dropdown-menu li {
+    display: block;
+}

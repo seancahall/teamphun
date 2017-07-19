@@ -1,0 +1,52 @@
+<!-- Step 1 - Select Customer  -->
+<div class="container-fluid">
+    <h1>Customer Selection</h1>
+    <h4>Step 1 of 3</h4>
+    <hr/>
+    <p>Search for Existing Customer or Create a New Customer</p>
+    <!-- <pre>{{customerCtrl.customers | json}}</pre> -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="navbar-form navbar-right" role="search">
+                <div class="input-group">
+                    <span class="input-group-addon" id="sizing-addon2"><span class="glyphicon glyphicon-search"></span></span>
+                    <input type="text" class="form-control" ng-model="customerCtrl.customerSearch" placeholder="Search" aria-describedby="sizing-addon2">
+                </div>
+            </div>
+            <div class="navbar-form navbar-right">
+                <div class="form-group">
+                    <button type="button" class="btn btn-primary" ui-sref="main.customerAddNew">Add New Customer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Customer Detail Table from Database -->
+<div class="container-fluid">
+    <div class="mainBox panel panel-default">
+        <div class="panel-heading">
+            <div class="panel-title">Customers</div>
+        </div>
+        <div class="panel-body">
+            <!-- Customer Table -->
+            <div class="table-responsive">
+                <table class="table table-hover table-striped table-condensed table-xs">
+                    <tr>
+                        <th>Business</th>
+                        <th>Contact</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Notes</th>
+                    </tr>
+                    <tr ng-repeat="customer in customerCtrl.customers | filter: customerCtrl.customerSearch">
+                        <td class="anchor"><a ui-sref="main.estimateSelect({customerId: customer.customerId})">{{customer.business}}</a></td>
+                        <td>{{customer.firstName}} {{customer.lastName}}</td>
+                        <td>{{customer.phone}}</td>
+                        <td>{{customer.email}}</td>
+                        <td>{{customer.note}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,71 @@
+<!-- Step 2 - Select Estimate  -->
+<div class="container-fluid">
+    <h1>Estimate Selection</h1>
+    <h4>Step 2 of 3</h4>
+    <hr/>
+    <p>Search for Existing Estimate or Create a New Estimate for:</p>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="navbar-form navbar-right" role="search">
+                <div class="input-group">
+                    <span class="input-group-addon" id="sizing-addon2"><span class="glyphicon glyphicon-search"></span></span>
+                    <input type="text" class="form-control" ng-model="vm.estimateSearch" placeholder="Search" aria-describedby="sizing-addon2">
+                </div>
+            </div>
+            <div class="navbar-form navbar-right">
+                <div class="form-group">
+                    <button type="button" class="btn btn-default" ui-sref="main.estimateLineItems({customerId: vm.customer.customerId})">Create a New Estimate</button>
+                    <input type="text" class="form-control" ng-model="vm.description" ng-show="vm.showDescription" placeholder="Estimate Description">
+                    <button type="button" class="btn btn-primary" ui-sref="main.estimateLineItems({customerId: vm.customer.customerId, description: vm.description})" ng-show="vm.showDescription">Go!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <table>
+        <p>{{vm.customer.firstName}} {{vm.customer.lastName}}
+            <br/>{{vm.customer.business}}
+            <br/>Customer Id: {{vm.customer.customerId}}
+            <br/>{{vm.customer.phone}}
+            <br/>{{vm.customer.email}}
+
+            <br/>Notes: <i>{{vm.customer.note}}</i>
+        </p>
+    </table>
+    <div>
+        <!-- this is the attempts to istantiate the orders in order select from the customer selected -->
+        <div class="mainBox panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-title">Estimates</div>
+                <div class="link" ui-sref="main.customerSelect"><a>Back</a></div>
+            </div>
+            <div class="panel-body">
+                <!-- Customer Table -->
+                <div class="table-responsive">
+                    <table class="table table-hover table-striped table-condensed table-xs">
+                        <tr>
+                            <th>No.</th>
+                            <th>Estimate Date</th>
+                            <th>Status</th>
+                            <!-- <th>Contact Id</th>-->
+                            <th>Total</th>
+                            <th>Cost</th>
+                            <th>Profit</th>
+                        </tr>
+                        <tr ng-repeat="est in vm.customer.estimate | filter:vm.estimateSearch">
+                            <td><a ui-sref="main.estimateUpdate({CustomerId: est.customerId, EstimateId: est.estimateId})">{{est.estimateId}}</a></td>
+                            <td>{{est.estimateCreatedDate | date:'MM-dd-yyyy'}}</td>
+                            <td>{{est.estimateStatus ? "Open":"Closed"}}</td>
+                         
+                            <td>{{est.estimateTotal | currency}}</td>
+                            <td>{{est.totalCost | currency}}</td>
+                            <td>{{est.totalProfit | currency}}</td>
+         
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

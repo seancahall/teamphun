@@ -1,0 +1,76 @@
+<h1>Customer Manager</h1>
+<hr/>
+<p>Add a new Customer</p>
+<!-- Add a new customer -->
+<div class="container-fluid">
+    <div class="mainBox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-title">Add a New Customer</div>
+            </div>
+            <div class="panel-body">
+                <div class="form">
+                    <!-- Register a new customer -->
+                    <form ng-submit="customerAdminCtrl.addCustomer() ">
+                        <!-- Register Business -->
+                        <div class="form-group ">
+                            <label for="business">Business Name</label>
+                            <input id="buisness" ng-model="customerAdminCtrl.newCustomer.business" type="text" class="form-control" placeholder="Business Name">
+                        </div>
+                        <!-- Register Customer First Name -->
+                        <div class="form-group ">
+                            <label for="firstName">First Name</label>
+                            <input id="firstName" ng-model="customerAdminCtrl.newCustomer.firstName" type="text " class="form-control " placeholder="First Name">
+                        </div>
+                        <!-- Register Customer Last Name -->
+                        <div class="form-group ">
+                            <label for="lastName">Last Name</label>
+                            <input id="lastName" ng-model="customerAdminCtrl.newCustomer.lastName" type="text " class="form-control " placeholder="Last Name ">
+                        </div>
+                        <!-- Register Phone Number -->
+                        <div class="form-group ">
+                            <label for="phone">Phone Number</label>
+                            <input id="phone" ng-model="customerAdminCtrl.newCustomer.phone" type="text" class="form-control" placeholder="Phone Number ">
+                        </div>
+                        <!-- Register Email -->
+                        <div class="form-group ">
+                            <label for="email">Email</label>
+                            <input id="email" ng-model="customerAdminCtrl.newCustomer.email" type="email" class="form-control" placeholder="Email">
+                        </div>
+                        <!-- Register Street Address -->
+                        <div class="form-group ">
+                            <label for="address">Street Address</label>
+                            <input id="address" ng-model="customerAdminCtrl.newCustomer.streetAddress" type="text" class="form-control" placeholder="Street Address ">
+                        </div>
+                        <!-- Register City -->
+                        <div class="form-group ">
+                            <label for="city">City</label>
+                            <input id="city" ng-model="customerAdminCtrl.newCustomer.city" type="text" class="form-control" placeholder="City">
+                        </div>
+                        <!-- Register State -->
+                        <div class="form-group ">
+                            <label for="state">State</label>
+                            <input id="state" ng-model="customerAdminCtrl.newCustomer.state" type="text" class="form-control" placeholder="state">
+                        </div>
+                        <!-- Register State -->
+                        <div class="form-group ">
+                            <label for="zipCode">Zip Code</label>
+                            <input id="zipCode" ng-model="customerAdminCtrl.newCustomer.zipCode" type="text" class="form-control" placeholder="Zip Code">
+                        </div>
+                        <!-- Notes -->
+                        <div class="form-group">
+                            <label for="notes">Notes</label>
+                            <textarea id="notes" ng-model="customerAdminCtrl.newCustomer.note" class="form-control" rows="3" placeholder="Notes"></textarea>
+                        </div>
+                        <!-- Submit Registered User and return to the Login Page -->
+                        <div class="form-group">
+                            <div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

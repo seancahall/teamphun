@@ -1,0 +1,61 @@
+<!-- Estimate Manager - search through all estimatess -->
+<div class="container-fluid">
+    <h1>Estimate Manager</h1>
+    <hr/>
+    <p>Search for Existing Estimate or Create a New Estimate:</p>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="navbar-form navbar-right" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" ng-model="estimateCtrl.estimateSearch" placeholder="Search">
+                </div>
+            </div>
+            <div class="navbar-form navbar-right">
+                <div class="form-group">
+                    <button type="button" class="btn btn-primary" ui-sref="main.estimateLineItems">Create a New Estimate</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- {{estimateCtrl.customer.firstName}} {{estimateCtrl.customer.lastName}}</pre> -->
+<!-- <pre>{{estimateCtrl.customer}}</pre> -->
+<!-- <div class="well">{{estimateCtrl.customer }}</div> -->
+<!-- Estimate Detail Table from Database -->
+<div class="container-fluid">
+    <div class="mainBox panel panel-default">
+        <div class="panel-heading">
+            <div class="panel-title">Estimates</div>
+            <div class="link" ui-sref="main.customerSelect"><a>Back</a></div>
+        </div>
+        <div class="panel-body">
+            <!-- Test to see if data is being passed from one state to the next -->
+            <!-- <p class="well">Test to see if data is being passed from one state to the next {{estimateCtrl.customer}}</p>
+ -->
+            <!-- Customer Table -->
+            <div class="table-responsive">
+                <table class="table table-hover table-striped table-condensed table-xs">
+                    <tr>
+                        <th>Poduct</th>
+                        <th>Description</th>
+                        <th>Qty</th>
+                        <th>Rate</th>
+                        <th>Amount</th>
+                        <th>Tax</th>
+                        <th>Date</th>
+                    </tr>
+                    <tr ng-repeat="estimate in estimateCtrl.estimates | filter: estimateCtrl.estimateSearch">
+                        <td>{{estimate.estimateId}}</td>
+                        <td class="anchor"><a ui-sref="main.estimateUpdate({CustomerId: estimate.customer.customerId})">{{estimate.customer.firstName}} {{estimate.customer.lastName}}</a></td>
+                        <td>{{estimate.customer.business}}</td>
+                        <td>{{estimate.estimateTotal}}</td>
+                        <td>{{estimate.totalCost}}</td>
+                        <td>{{estimate.totalProfit}}</td>
+                        <!--  <td>{{estimate.estimateStatus}}</td> -->
+                        <td>{{estimate.estimateCreatedDate}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<!-- Main is going to be used for the navigation between estimate and admin -->
+<!-- Link to move to administrative tasks (viewable only to those whos has administrative rights) -->
+<ol class="breadcrumb">
+    <li role="presentation"><span class="glyphicon glyphicon glyphicon-sunglasses" aria-hidden="true"></span><a ui-sref="main.customerSelect"><strong> TEAM PHUN </strong></a></li>
+    <!-- Link to Admin page -->
+    <li role="presentation" class="active"><a ui-sref="admin">Admin</a></li>
+    <!-- Link to logout -->
+    <li role="presentation"><a ng-click="mainCtrl.logout()">Log Out</a></li>
+</ol>
+<!-- <img class="image" src="app/styles/img/LogoBlackWhite.svg"> -->
+<div class="container-fluid">
+    <div ui-view></div>
+</div>

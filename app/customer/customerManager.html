@@ -1,0 +1,60 @@
+<div class="container-fluid">
+    <h1>Customer Manager</h1>
+    <hr/>
+    <p>Edit and Delete Customers</p>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="navbar-form navbar-right" role="search">
+                <div class="input-group">
+                    <span class="input-group-addon" id="sizing-addon2"><span class="glyphicon glyphicon-search"></span></span>
+                    <input type="text" class="form-control" ng-model="customerAdminCtrl.customerSearch" placeholder="Search" aria-describedby="sizing-addon2">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <pre>{{customerAdminCtrl.customers | json}}</pre>
+ -->
+<!-- Customer Detail Table from Database -->
+<div class="container-fluid">
+    <div class="mainBox panel panel-default">
+        <div class="panel-heading">
+            <div class="panel-title">Customers</div>
+        </div>
+        <div class="panel-body">
+            <!-- Customer Table -->
+            <div class="table-responsive">
+                <table class="table table-hover table-striped table-condensed table-xs">
+                    <tr>
+                        <th>Edit</th>
+                        <th>ID</th>
+                        <th>Buisness</th>
+                        <th>Contact</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Notes</th>
+                    </tr>
+                    <tr class="anchor" ng-repeat="customer in customerAdminCtrl.customers | filter: customerAdminCtrl.customerSearch">
+                        <td><a ng-hide="select" ng-click="select = !select; edit = !edit">Edit</a>
+                            <div ng-show="edit">
+                                <a ui-sref="admin.customerUpdate({CustomerId: customer.customerId})">
+                                    <font color="orange">Update</font>
+                                </a>
+                                <br>
+                                <a ng-click="customerAdminCtrl.deleteCustomer(customer.customerId)">
+                                    <font color="red">Delete</font>
+                                </a>
+                            </div>
+                        </td>
+                        <td>{{customer.customerId}}</td>
+                        <td>{{customer.business}}</td>
+                        <td>{{customer.firstName}} {{customer.lastName}}</td>
+                        <td>{{customer.phone}}</td>
+                        <td>{{customer.email}}</td>
+                        <td>{{customer.note}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

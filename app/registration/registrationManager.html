@@ -1,0 +1,87 @@
+<h1>User Manager</h1>
+<hr/>
+<p>Edit and delete user - Role itegration needed</p>
+<div class="row">
+    <div class="col-md-12">
+        <div class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+                <input type="text" class="form-control" ng-model="registerCtrl.userSearch" placeholder="Search">
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- All current registered users - May move to a new state-->
+<div class="container-fluid">
+    <div class="mainBox panel panel-default">
+        <div class="panel-heading">
+            <div class="panel-title">Registered Users</div>
+        </div>
+        <div class="panel-body">
+            <!-- Customer Table -->
+            <div class="table-responsive">
+                <table class="table table-hover table-striped table-condensed table-xs">
+                    <tr>
+                        <th>Edit</th>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                    </tr>
+                    <tr ng-repeat="user in registerCtrl.user | filter: registerCtrl.userSearch">
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select
+                                    <span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                    <li><a>Update</a></li>
+                                    <li><a>Delete</a></li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>1</td>
+                        <td>Sean Burns (example data)</td>
+                        <td>555-555-5555</td>
+                        <td>sean@email.com</td>
+                        <td>Admin</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select
+                                    <span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                    <li><a>Update</a></li>
+                                    <li><a>Delete</a></li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>2</td>
+                        <td>Jesse Goodwick (example data)</td>
+                        <td>555-555-5555</td>
+                        <td>Jesse@email.com</td>
+                        <td>Owner</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select
+                                    <span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                    <li><a>Update</a></li>
+                                    <li><a>Delete</a></li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>3</td>
+                        <td>John Doe (example data)</td>
+                        <td>555-555-5555</td>
+                        <td>sean@email.com</td>
+                        <td>Employee</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
